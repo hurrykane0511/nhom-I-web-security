@@ -9,7 +9,7 @@ if(!empty($_GET['keyword'])) {
     $keyword = $_GET['keyword'];
 }
 ?>
-<div class="container">
+<div  class="container">
     <nav class="navbar navbar-icon-top navbar-default">
 
             <!-- Brand and toggle get grouped for better mobile display -->
