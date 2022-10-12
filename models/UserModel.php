@@ -3,21 +3,19 @@
 require_once 'BaseModel.php';
 
 class UserModel extends BaseModel {
-
-    public function findUserById($id) {
-        $sql = 'SELECT * FROM users WHERE id = '.$id;
-        $user = $this->select($sql);
-
-        return $user;
-    }
-
-    public function findUser($keyword) {
-        $sql = 'SELECT * FROM users WHERE user_name LIKE %'.$keyword.'%'. ' OR user_email LIKE %'.$keyword.'%';
-        $user = $this->select($sql);
+/**
+     * Insert session
+     * @param $input
+     * @return mixed
+     */
+    public function insertSession($session) {
+        $sql = "INSERT INTO `session`(`ma`) VALUES (" .
+                "'" . $session."')";
+        $user = $this->insert($sql);
 
         return $user;
     }
-
+    
     /**
      * Authentication user
      * @param $userName
