@@ -14,7 +14,6 @@ class UserModel extends BaseModel {
     public function findUser($keyword) {
         $sql = 'SELECT * FROM users WHERE user_name LIKE %'.$keyword.'%'. ' OR user_email LIKE %'.$keyword.'%';
         $user = $this->select($sql);
-
         return $user;
     }
 
@@ -60,14 +59,13 @@ class UserModel extends BaseModel {
     }
 
     /**
-     * Insert user
+     * Insert session
      * @param $input
      * @return mixed
      */
-    public function insertUser($input) {
-        $sql = "INSERT INTO `app_web1`.`users` (`name`, `password`) VALUES (" .
-                "'" . $input['name'] . "', '".md5($input['password'])."')";
-
+    public function insertSession($session) {
+        $sql = "INSERT INTO `session`(`ma`) VALUES (" .
+                "'" . $session."')";
         $user = $this->insert($sql);
 
         return $user;

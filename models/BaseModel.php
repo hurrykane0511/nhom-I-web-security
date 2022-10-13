@@ -1,5 +1,5 @@
 <?php
-require_once 'configs/database.php';
+require_once './configs/database.php';
 
 abstract class BaseModel {
     // Database connection
@@ -14,7 +14,6 @@ abstract class BaseModel {
                 exit();
             }
         }
-
     }
 
     /**
