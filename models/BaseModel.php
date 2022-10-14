@@ -14,5 +14,60 @@ abstract class BaseModel {
                 exit();
             }
         }
+    }
 
-    }}
+    /**
+     * Query in database
+     * @param $sql
+     */
+    protected function query($sql) {
+
+        $result = self::$_connection->query($sql);
+        return $result;
+    }
+
+    /**
+     * Select statement
+     * @param $sql
+     */
+    protected function select($sql) {
+        $result = $this->query($sql);
+        $rows = [];
+        if (!empty($result)) {
+            while ($row = $result->fetch_assoc()) {
+                $rows[] = $row;
+            }
+        }
+        return $rows;
+    }
+
+    /**
+     * Delete statement
+     * @param $sql
+     * @return mixed
+     */
+    protected function delete($sql) {
+        $result = $this->query($sql);
+        return $result;
+    }
+
+    /**
+     * Update statement
+     * @param $sql
+     * @return mixed
+     */
+    protected function update($sql) {
+        $result = $this->query($sql);
+        return $result;
+    }
+
+    /**
+     * Insert statement
+     * @param $sql
+     */
+    protected function insert($sql) {
+        $result = $this->query($sql);
+        return $result;
+    }
+
+}
