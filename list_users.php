@@ -17,6 +17,7 @@ $users = $userModel->getUsers($params);
 <head>
     <title>Home</title>
     <?php include 'views/meta.php' ?>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://apis.google.com">
 </head>
 <body>
     <?php include 'views/header.php'?>
